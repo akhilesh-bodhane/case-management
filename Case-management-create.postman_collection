@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "14eb4602-95b9-4667-aaa2-4fb23ab5ea6e",
+		"name": "Case-management-create",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50347925",
+		"_collection_link": "https://anshul-d-gupta-2953320.postman.co/workspace/Anshul-Gupta's-Workspace~842a8aad-3355-41f2-83a7-284e8934e1b3/collection/50347925-14eb4602-95b9-4667-aaa2-4fb23ab5ea6e?action=share&source=collection_link&creator=50347925"
+	},
+	"item": [
+		{
+			"name": "Create case",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "f93e2db5-b153-49d3-b653-014c5368791e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"case\": {\r\n        \"tenantId\": \"od.nilgiri\",\r\n        \"caseType\": \"CIVIL\",\r\n        \"caseCategory\": \"LAND\",\r\n        \"courtType\": \"DISTRICT\",\r\n        \"courtName\": \"DISTRICT_PUNE\",\r\n        \"petitioners\": [\r\n            {\r\n                \"petitionId\": \"PET-001\",\r\n                \"name\": \"pet1\",\r\n                \"mobileNumber\": \"9876473782\"\r\n            }\r\n        ],\r\n        \"respondents\": [\r\n            {\r\n                \"respondentId\": \"RESP-001\",\r\n                \"name\": \"res1\",\r\n                \"mobileNumber\": \"7367366443\"\r\n            }\r\n        ],\r\n        \"title\": \"ggg\",\r\n        \"description\": \"aa\",\r\n        \"department\": \"REVENUE\",\r\n        \"documents\": [\r\n            {\r\n                \"fileName\": \"bpa-receipt-1764762078391.pdf\",\r\n                \"fileStoreId\": \"5e83200c-4a83-4c6d-b533-ce8f6e53f66a\",\r\n                \"documentUid\": \"5e83200c-4a83-4c6d-b533-ce8f6e53f66a\",\r\n                \"documentType\": \"bpa-receipt-1764762078391.pdf\"\r\n            }\r\n        ],\r\n        \"advocates\": [],\r\n        \"nextHearingDate\": 1767637800000,\r\n        \"workflow\": {\r\n            \"workflowid\": \"iewruiew\",\r\n            \"action\": \"INITIATE\",\r\n            \"comments\": \"\",\r\n            \"assignees\": []\r\n        }\r\n    },\r\n    \"RequestInfo\": {\r\n        \"apiId\": \"Rainmaker\",\r\n        \"authToken\": \"6a6adcf1-696c-47ef-b259-7da1fbdbf10c\",\r\n        \"userInfo\": {\r\n            \"id\": 3336191,\r\n            \"uuid\": \"a58c5905-389e-49a6-bd43-9ba216f7cddc\",\r\n            \"userName\": \"EMP-NLG-000081\",\r\n            \"name\": \"Diptimay Pani \",\r\n            \"mobileNumber\": \"8908426459\",\r\n            \"emailId\": \"diptimay.pani@gmail.com\",\r\n            \"locale\": null,\r\n            \"type\": \"EMPLOYEE\",\r\n            \"roles\": [\r\n                {\r\n                    \"name\": \"FSM Employee Application Editor\",\r\n                    \"code\": \"FSM_EDITOR_EMP\",\r\n                    \"tenantId\": \"od.nilgiri\"\r\n                },\r\n                {\r\n                    \"name\": \"FSM Payment Collector\",\r\n                    \"code\": \"FSM_COLLECTOR\",\r\n                    \"tenantId\": \"od.nilgiri\"\r\n                },\r\n                {\r\n                    \"name\": \"FSM Employee Application Creator\",\r\n                    \"code\": \"FSM_CREATOR_EMP\",\r\n                    \"tenantId\": \"od.nilgiri\"\r\n                },\r\n                {\r\n                    \"name\": \"FSM Employee Report Viewer\",\r\n                    \"code\": \"FSM_REPORT_VIEWER\",\r\n                    \"tenantId\": \"od.nilgiri\"\r\n                },\r\n                {\r\n                    \"name\": \"PQM Admin\",\r\n                    \"code\": \"PQM_ADMIN\",\r\n                    \"tenantId\": \"od.nilgiri\"\r\n                },\r\n                {\r\n                    \"name\": \"Employee\",\r\n                    \"code\": \"EMPLOYEE\",\r\n                    \"tenantId\": \"od.nilgiri\"\r\n                },\r\n                {\r\n                    \"name\": \"FSM Administrator\",\r\n                    \"code\": \"FSM_ADMIN\",\r\n                    \"tenantId\": \"od.nilgiri\"\r\n                },\r\n                {\r\n                    \"name\": \"FSM Employee Dashboard Viewer\",\r\n                    \"code\": \"FSM_DASHBOARD_VIEWER\",\r\n                    \"tenantId\": \"od.nilgiri\"\r\n                }\r\n            ],\r\n            \"active\": true,\r\n            \"tenantId\": \"od.nilgiri\"\r\n        },\r\n        \"msgId\": \"1767711785938|en_IN\",\r\n        \"plainAccessRequest\": {}\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8070/case-management/case/_create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8070",
+					"path": [
+						"case-management",
+						"case",
+						"_create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET cases",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t \"RequestInfo\": {\n    \"apiId\": \"Rainmaker\",\n    \"action\": \"\",\n    \"did\": 1,\n    \"key\": \"\",\n    \"msgId\": \"20170310130900|en_IN\",\n    \"requesterId\": \"\",\n    \"ts\": 1513579888683,\n    \"ver\": \".01\",\n    \"userInfo\": {\n                           \n                            \"uuid\": \"c2b18504-c5d5-4edc-b6eb-a3a913c17add\",\n                            \"userName\": \"9686987977\",\n                            \"name\": \"One\",\n                            \"gender\": \"Male\",\n                            \"mobileNumber\": \"9686987977\",\n                            \"type\": \"EMPLOYEE\",\n                            \"roles\": [\n                                {\n                                    \"id\": null,\n                                    \"name\": \"ULB_Officer\",\n                                    \"code\": \"ULB_OFFICER\"\n                                }\n                            ],\n                            \"tenantId\": \"od\"\n                        },\n    \"authToken\": \"f93e2db5-b153-49d3-b653-014c5368791e\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8070/case-management/case/_search?tenantId=od&caseIds=CASE-001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8070",
+					"path": [
+						"case-management",
+						"case",
+						"_search"
+					],
+					"query": [
+						{
+							"key": "tenantId",
+							"value": "od"
+						},
+						{
+							"key": "caseIds",
+							"value": "CASE-001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Case",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestInfo\": {\r\n    \"apiId\": \"Rainmaker\",\r\n    \"action\": \"\",\r\n    \"did\": 1,\r\n    \"key\": \"\",\r\n    \"msgId\": \"20170310130900|en_IN\",\r\n    \"requesterId\": \"\",\r\n    \"ts\": 1513579888683,\r\n    \"ver\": \".01\",\r\n    \"userInfo\": {\r\n                           \r\n                           \"uuid\": \"fefd3ab9-b69e-46c1-9fdd-dd22fa880ce5\",\r\n                            \"userName\": \"9686987977\",\r\n                            \"name\": \"One\",\r\n                            \"gender\": \"Male\",\r\n                            \"mobileNumber\": \"9686987977\",\r\n                            \"type\": \"EMPLOYEE\",\r\n                            \"roles\": [\r\n                                {\r\n                                    \"id\": null,\r\n                                    \"name\": \"ULB_Officer\",\r\n                                    \"code\": \"ULB_OFFICER\"\r\n                                }\r\n                            ],\r\n                            \"tenantId\": \"od\"\r\n                        },\r\n    \"authToken\": \"c2b18504-c5d5-4edc-b6eb-a3a913c17add\"\r\n  },\r\n\r\n  \"case\": {\r\n    \"caseId\": \"CASE-2025-0001\",\r\n    \"tenantId\": \"od\",\r\n\r\n    \"caseType\": \"CIVIL\",\r\n    \"caseCategory\": \"LAND_DISPUTE\",\r\n    \"title\": \"Land Ownership Dispute\",\r\n    \"description\": \"Dispute regarding ownership of municipal land\",\r\n    \"department\": \"REVENUE\",\r\n\r\n    \"advocates\": [\r\n      {\r\n        \"advocateId\": \"ADV-101\",\r\n        \"name\": \"Ramesh Kumar\",\r\n        \"mobileNumber\": \"9876543210\"\r\n      }\r\n    ],\r\n\r\n    \"petitioners\": [\r\n      {\r\n        \"petitionerId\": \"PET-001\",\r\n        \"name\": \"Amit Sharma\",\r\n        \r\n        \"contactNo\": \"9123456789\"\r\n      }\r\n    ],\r\n\r\n    \"respondents\": [\r\n      {\r\n        \"respondentId\": \"RES-001\",\r\n        \"name\": \"Municipal Corporation\",\r\n       \r\n        \"contactNo\": \"9112345678\"\r\n      }\r\n    ],\r\n\r\n    \"courtType\": \"DISTRICT_COURT\",\r\n    \"courtName\": \"District Court Pune\",\r\n    \"nextHearingDate\": 1737504000000,\r\n\r\n    \"documents\": [\r\n      {\r\n        \"documentUid\": \"DOC-001\",\r\n        \"documentType\": \"PETITION\",\r\n        \"fileStoreId\": \"file-store-123\"\r\n      }\r\n    ],\r\n\r\n    \"workflow\": {\r\n      \"action\": \"REGISTERED\"\r\n    }\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8070/case-management/case/_update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8070",
+					"path": [
+						"case-management",
+						"case",
+						"_update"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
